@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using System;
-namespace HomeWork_01
+namespace BookManagementApp
 {
     public class Book
     {
