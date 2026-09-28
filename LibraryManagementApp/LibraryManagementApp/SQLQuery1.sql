@@ -1,0 +1,19 @@
+﻿CREATE TABLE Books (
+    BookId INT IDENTITY(1,1) PRIMARY KEY,
+    Title NVARCHAR(200) NOT NULL,
+    Author NVARCHAR(150) NOT NULL,
+    Stock INT NOT NULL
+);
+
+CREATE TABLE Members (
+    MemberId INT IDENTITY(1,1) PRIMARY KEY,
+    Name NVARCHAR(150) NOT NULL
+);
+
+CREATE TABLE IssuedBooks (
+    IssueId INT IDENTITY(1,1) PRIMARY KEY,
+    BookId INT NOT NULL FOREIGN KEY REFERENCES Books(BookId),
+    MemberId INT NOT NULL FOREIGN KEY REFERENCES Members(MemberId),
+    IssueDate DATETIME NOT NULL,
+    ReturnDate DATETIME NULL -- Left NULL until returned
+);
