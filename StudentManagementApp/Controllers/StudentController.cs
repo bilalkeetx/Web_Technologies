@@ -1,13 +1,3 @@
-﻿
-
-
-
-
-
-
-
-
-
 using Microsoft.AspNetCore.Mvc;
 using StudentManagementApp.Models;
 using StudentManagementApp.Models.Repositories;
@@ -26,10 +16,6 @@ namespace StudentManagementApp.Controllers
         }
 
 
-        // =====================================================
-        // INDEX
-        // =====================================================
-
         public async Task<IActionResult> Index()
         {
             List<Student> students =
@@ -41,10 +27,6 @@ namespace StudentManagementApp.Controllers
 
 
 
-        // =====================================================
-        // CREATE - GET
-        // =====================================================
-
         [HttpGet]
         public IActionResult Create()
         {
@@ -52,10 +34,6 @@ namespace StudentManagementApp.Controllers
         }
 
 
-
-        // =====================================================
-        // CREATE - POST
-        // =====================================================
 
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -79,10 +57,6 @@ namespace StudentManagementApp.Controllers
 
 
 
-        // =====================================================
-        // EDIT - GET
-        // =====================================================
-
         [HttpGet]
         public async Task<IActionResult> Edit(int id)
         {
@@ -100,10 +74,6 @@ namespace StudentManagementApp.Controllers
         }
 
 
-
-        // =====================================================
-        // EDIT - POST
-        // =====================================================
 
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -125,11 +95,6 @@ namespace StudentManagementApp.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-
-
-        // =====================================================
-        // DELETE - POST
-        // =====================================================
 
         [HttpPost]
         [ValidateAntiForgeryToken]
