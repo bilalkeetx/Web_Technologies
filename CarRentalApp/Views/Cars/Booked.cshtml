@@ -1,0 +1,49 @@
+﻿@model List<CarRentalApp.Models.Car>
+
+@{
+    ViewData["Title"] = "Booked Cars";
+}
+
+<div class="container mt-4">
+
+    <h2 class="mb-4">Booked Cars</h2>
+
+    @if (Model.Count == 0)
+    {
+        <div class="alert alert-warning">
+            No cars have been booked yet.
+        </div>
+    }
+    else
+    {
+        <table class="table table-bordered table-striped">
+            <thead class="table-dark">
+                <tr>
+                    <th>ID</th>
+                    <th>Car Name</th>
+                    <th>Price Per Day</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                @foreach (var car in Model)
+                {
+                    <tr>
+                        <td>@car.Id</td>
+                        <td>@car.Name</td>
+                        <td>PKR @car.PricePerDay</td>
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    }
+
+    <a asp-controller="Cars"
+       asp-action="Index"
+       class="btn btn-primary">
+        Back to Available Cars
+    </a>
+
+</div>
